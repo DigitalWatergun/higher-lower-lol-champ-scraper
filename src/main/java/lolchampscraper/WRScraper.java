@@ -18,8 +18,9 @@ public class WRScraper {
             String searchUrl = String.format(baseUrl, championName);
 
             HtmlPage page = (HtmlPage) client.getPage(searchUrl);            
-            HtmlDivision winRate = (HtmlDivision) page.getByXPath("//div[contains(@class, 'champion-ranking-stats-normal')]/div[contains(@class, 'win-rate')]/div[contains(@class, 'value')]").get(0);
-            System.out.println(championName + " " + winRate.asNormalizedText());
+            HtmlDivision winRate = (HtmlDivision) page
+                    .getByXPath("//div[contains(@class, 'champion-ranking-stats-normal')]" +
+                    "/div[contains(@class, 'win-rate')]/div[contains(@class, 'value')]").get(0);
 
             return winRate.asNormalizedText();
         }

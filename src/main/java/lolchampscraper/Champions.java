@@ -14,8 +14,6 @@ import com.google.gson.JsonObject;
 
 
 public class Champions {
-    ArrayList<String> champions = new ArrayList<String>();
-
     private static JsonObject retrieveChampionJson() throws IOException, InterruptedException {
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
