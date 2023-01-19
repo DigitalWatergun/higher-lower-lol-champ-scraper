@@ -30,6 +30,11 @@
             <artifactId>htmlunit</artifactId>
             <version>2.69.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.5.1</version>
+        </dependency>
     </dependencies>
 
     <build>

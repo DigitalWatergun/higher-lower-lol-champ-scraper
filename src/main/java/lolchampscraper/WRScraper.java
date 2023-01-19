@@ -9,7 +9,7 @@ import com.gargoylesoftware.htmlunit.html.HtmlDivision;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
 
 public class WRScraper {
-    public void scrapeUgg(String championName) throws FailingHttpStatusCodeException, MalformedURLException, IOException {
+    public String scrapeUgg(String championName) throws FailingHttpStatusCodeException, MalformedURLException, IOException {
         try (WebClient client = new WebClient()) {
             client.getOptions().setCssEnabled(false);
             client.getOptions().setJavaScriptEnabled(false);
@@ -20,6 +20,8 @@ public class WRScraper {
             HtmlPage page = (HtmlPage) client.getPage(searchUrl);            
             HtmlDivision winRate = (HtmlDivision) page.getByXPath("//div[contains(@class, 'champion-ranking-stats-normal')]/div[contains(@class, 'win-rate')]/div[contains(@class, 'value')]").get(0);
             System.out.println(championName + " " + winRate.asNormalizedText());
+
+            return winRate.asNormalizedText();
         }
     }
 }
