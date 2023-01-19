@@ -9,7 +9,7 @@ import com.gargoylesoftware.htmlunit.html.HtmlDivision;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
 
 public class WRScraper {
-    public String scrapeUgg(String championName) throws FailingHttpStatusCodeException, MalformedURLException, IOException {
+    public static String scrapeUgg(String championName) throws FailingHttpStatusCodeException, MalformedURLException, IOException {
         try (WebClient client = new WebClient()) {
             client.getOptions().setCssEnabled(false);
             client.getOptions().setJavaScriptEnabled(false);

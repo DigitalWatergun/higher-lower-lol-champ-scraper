@@ -31,19 +31,21 @@ public class Champions {
         return jsonObject;
     }
 
-    public ArrayList<String> getChampionNames() throws IOException, InterruptedException {
+    public static ArrayList<String> getChampionNames() throws IOException, InterruptedException {
+        ArrayList<String> championsList = new ArrayList<String>();
+
         JsonObject championJson = retrieveChampionJson();
         JsonObject championJsonData = (JsonObject) championJson.get("data");
         Set<Map.Entry<String, JsonElement>> champions = championJsonData.entrySet();
         for (Map.Entry<String, JsonElement> champion : champions) {
             String championName = champion.getKey();
             if (championName.equals("MonkeyKing")) {
-                this.champions.add("Wukong");
+                championsList.add("Wukong");
                 continue;
             }
-            this.champions.add(championName);
+            championsList.add(championName);
         }
 
-        return this.champions;
+        return championsList;
     }
 }
