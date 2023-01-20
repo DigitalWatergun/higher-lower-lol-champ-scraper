@@ -18,11 +18,11 @@ public class WRScraper {
             String searchUrl = String.format(baseUrl, championName);
 
             HtmlPage page = (HtmlPage) client.getPage(searchUrl);            
-            HtmlDivision winRate = (HtmlDivision) page
+            HtmlDivision matchesPlayed = (HtmlDivision) page
                     .getByXPath("//div[contains(@class, 'champion-ranking-stats-normal')]" +
-                    "/div[contains(@class, 'win-rate')]/div[contains(@class, 'value')]").get(0);
+                    "/div[contains(@class, 'matches')]/div[contains(@class, 'value')]").get(0);
 
-            return winRate.asNormalizedText();
+            return matchesPlayed.asNormalizedText().replace(",","");
         }
     }
 }

@@ -12,16 +12,16 @@ public class App {
         ArrayList<String> championNames = Champions.getChampionNames();
         System.out.println("Number of champion names pulled: " + championNames.size());
 
-        System.out.println("Pulling winrates for each champion...");
-        HashMap<String, String> champWinRates = new HashMap<String, String>();
+        System.out.println("Pulling matches played for each champion...");
+        HashMap<String, String> champMatchesPlayed = new HashMap<String, String>();
         for (String championName : championNames) {
-            String winRate = WRScraper.scrapeUgg(championName);
-            champWinRates.put(championName, winRate);
+            String matchesPlayed = WRScraper.scrapeUgg(championName);
+            champMatchesPlayed.put(championName.toLowerCase(), matchesPlayed);
         }
 
-        System.out.println("Upserting champion winrates to database...");
+        System.out.println("Upserting champion matches played to database...");
         Connection connection = Datastore.connectToPostgres();
-        Datastore.batchInsert(connection, champWinRates);
+        Datastore.batchInsert(connection, champMatchesPlayed);
         Datastore.closePostgres(connection);
         System.out.println("Done!!");
     }

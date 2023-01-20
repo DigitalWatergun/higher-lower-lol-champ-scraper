@@ -24,17 +24,17 @@ public class Datastore {
         connection.close();
     }
 
-    public static void batchInsert(Connection connection, HashMap<String, String> champWinRates) throws SQLException {
-        String sql = "INSERT into champions (champion_name, win_rate) VALUES (?, ?) " +
-                "ON CONFLICT (champion_name) DO UPDATE SET win_rate = excluded.win_rate " +
-                "WHERE champions.win_rate <> excluded.win_rate";
+    public static void batchInsert(Connection connection, HashMap<String, String> champMatchesPlayed) throws SQLException {
+        String sql = "INSERT into champions (champion_name, matches_played) VALUES (?, ?) " +
+                "ON CONFLICT (champion_name) DO UPDATE SET matches_played = excluded.matches_played " +
+                "WHERE champions.matches_played <> excluded.matches_played";
         PreparedStatement sqlStatement = connection.prepareStatement(sql);
 
-        for (Map.Entry<String, String> entry : champWinRates.entrySet()) {
+        for (Map.Entry<String, String> entry : champMatchesPlayed.entrySet()) {
             String champion = entry.getKey();
-            String winrate = entry.getValue();
-            sqlStatement.setString(1, champion.toLowerCase());
-            sqlStatement.setString(2, winrate);
+            String matchesPlayed = entry.getValue();
+            sqlStatement.setString(1, champion);
+            sqlStatement.setString(2, matchesPlayed);
             sqlStatement.addBatch();
         }
 
