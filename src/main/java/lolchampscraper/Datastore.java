@@ -7,11 +7,14 @@ import java.sql.PreparedStatement;
 import java.util.HashMap;
 import java.util.Map;
 
+import io.github.cdimascio.dotenv.Dotenv;
+
 public class Datastore {
     public static Connection connectToPostgres() throws SQLException {
-        String url = "db_url";
-        String user = "db_user";
-        String password = "db_pass";
+        Dotenv dotenv = Config.getEnvVars();
+        String url = dotenv.get("POSTGRES_URL");
+        String user = dotenv.get("POSTGRES_USER");
+        String password = dotenv.get("POSTGRES_PASS");
         Connection connection = DriverManager.getConnection(url, user, password);
 
         return connection;
