@@ -1,4 +1,4 @@
-package lolchampscraper;
+package higherlowerlolchamp.scraper;
 
 import java.io.IOException;
 import java.net.MalformedURLException;

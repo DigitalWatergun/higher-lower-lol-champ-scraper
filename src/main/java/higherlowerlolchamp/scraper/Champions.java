@@ -1,4 +1,4 @@
-package lolchampscraper;
+package higherlowerlolchamp.scraper;
 
 import java.util.ArrayList;
 import java.util.Map;

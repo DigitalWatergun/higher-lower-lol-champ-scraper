@@ -1,4 +1,4 @@
-package lolchampscraper;
+package higherlowerlolchamp.scraper;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -17,6 +17,7 @@ public class App {
         for (String championName : championNames) {
             String matchesPlayed = Scraper.scrapeUgg(championName);
             champMatchesPlayed.put(championName.toLowerCase(), matchesPlayed);
+            System.out.println(championName + " " + matchesPlayed);
         }
 
         System.out.println("Upserting champion matches played to database...");

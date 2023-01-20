@@ -1,4 +1,4 @@
-package lolchampscraper;
+package higherlowerlolchamp.scraper;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

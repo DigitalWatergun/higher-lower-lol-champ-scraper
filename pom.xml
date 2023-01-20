@@ -58,7 +58,7 @@
                             <transformers>
                                 <transformer
                                     implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>lolchampscraper.App</mainClass>
+                                    <mainClass>higherlowerlolchamp.scraper.App</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>

@@ -1,4 +1,4 @@
-package lolchampscraper;
+package higherlowerlolchamp.scraper;
 
 import io.github.cdimascio.dotenv.Dotenv;
 
