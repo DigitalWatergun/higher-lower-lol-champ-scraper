@@ -15,7 +15,7 @@ public class App {
         System.out.println("Pulling matches played for each champion...");
         HashMap<String, String> champMatchesPlayed = new HashMap<String, String>();
         for (String championName : championNames) {
-            String matchesPlayed = WRScraper.scrapeUgg(championName);
+            String matchesPlayed = Scraper.scrapeUgg(championName);
             champMatchesPlayed.put(championName.toLowerCase(), matchesPlayed);
         }
 

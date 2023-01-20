@@ -8,7 +8,7 @@ import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.HtmlDivision;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
 
-public class WRScraper {
+public class Scraper {
     public static String scrapeUgg(String championName) throws FailingHttpStatusCodeException, MalformedURLException, IOException {
         try (WebClient client = new WebClient()) {
             client.getOptions().setCssEnabled(false);
