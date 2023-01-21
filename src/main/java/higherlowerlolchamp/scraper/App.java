@@ -16,7 +16,7 @@ public class App {
         HashMap<String, String> champMatchesPlayed = new HashMap<String, String>();
         for (String championName : championNames) {
             String matchesPlayed = Scraper.scrapeUgg(championName);
-            champMatchesPlayed.put(championName.toLowerCase(), matchesPlayed);
+            champMatchesPlayed.put(championName, matchesPlayed);
             System.out.println(championName + " " + matchesPlayed);
         }
 

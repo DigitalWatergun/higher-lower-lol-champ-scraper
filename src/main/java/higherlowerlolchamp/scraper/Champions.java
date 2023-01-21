@@ -37,10 +37,6 @@ public class Champions {
         Set<Map.Entry<String, JsonElement>> champions = championJsonData.entrySet();
         for (Map.Entry<String, JsonElement> champion : champions) {
             String championName = champion.getKey();
-            if (championName.equals("MonkeyKing")) {
-                championsList.add("Wukong");
-                continue;
-            }
             championsList.add(championName);
         }
 
