@@ -17,6 +17,9 @@ public class App {
         Map<String, Map<String, String>> championData = new HashMap<>();
         for (String championName : championNames) {
             String matchesPlayed = Scraper.scrapeUgg(championName);
+            if (matchesPlayed == null) {
+                continue;
+            }
 
             Map<String, String> championInfo = new HashMap<>();
             championInfo.put("championName", championName);
