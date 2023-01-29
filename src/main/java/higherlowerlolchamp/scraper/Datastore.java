@@ -10,10 +10,10 @@ import io.github.cdimascio.dotenv.Dotenv;
 
 public class Datastore {
     public static Connection connectToPostgres() throws SQLException {
-        Dotenv dotenv = Config.getEnvVars();
-        String url = dotenv.get("POSTGRES_URL");
-        String user = dotenv.get("POSTGRES_USER");
-        String password = dotenv.get("POSTGRES_PASS");
+        // Dotenv dotenv = Config.getEnvVars();
+        String url = System.getenv("POSTGRES_URL");
+        String user = System.getenv("POSTGRES_USER");
+        String password = System.getenv("POSTGRES_PASS");
         Connection connection = DriverManager.getConnection(url, user, password);
 
         return connection;
