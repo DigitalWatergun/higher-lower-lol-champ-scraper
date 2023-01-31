@@ -43,7 +43,7 @@ public class App implements RequestStreamHandler {
             championInfo.put("championName", championName);
             championInfo.put("matchesPlayed", matchesPlayed);
             championInfo.put("loadingScreenUrl", String
-                    .format("http://ddragon.leagueoflegends.com/cdn/img/champion/loading/%s_0.jpg", championName));
+                    .format("https://ddragon.leagueoflegends.com/cdn/img/champion/loading/%s_0.jpg", championName));
             championData.put(championName, championInfo);
         }
 
