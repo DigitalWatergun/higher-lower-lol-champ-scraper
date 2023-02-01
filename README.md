@@ -11,4 +11,3 @@ The data will then be parsed and inserted/updated in the database.
 ### Credits
 - Riot Developer Assets: https://developer.riotgames.com/docs/lol#data-dragon_data-assets
 - U.GG: https://u.gg/
-- UI Designer: https://www.weichristine.com/
